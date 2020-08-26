@@ -1,7 +1,8 @@
 .label-input {
-    
+    position: relative;
 }
 
 .input {
-    
+    min-width: 250px;
+    height: 25px;
 }
