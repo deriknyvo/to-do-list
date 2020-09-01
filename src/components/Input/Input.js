@@ -3,7 +3,9 @@ import Button from '../Button/index';
 
 const Input = ({ item, addItem, onChangeValue }) => {
 
-    const onClickHandler = () => addItem(item);
+    function onClickHandler() {
+        addItem(item);
+    }
 
     return (
         <div>
