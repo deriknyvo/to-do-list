@@ -3,13 +3,6 @@ import Input from '../Input/index';
 import Button from '../Button/index';
 
 const Form = ({ item, addItemList, setItem }) => {
-    function onClickHandler() {
-        addItemList(item);
-    }
-
-    function onChangeValue(event) {
-        setItem(event.target.value);
-    }
 
     function onKeydownHandler(event) {
         if (event.key === 'Enter') {
@@ -21,12 +14,12 @@ const Form = ({ item, addItemList, setItem }) => {
     return (
         <form>
             <Input 
-                item={item}
-                onChangeValue={onChangeValue}
+                value={item}
+                onChangeValueHandler={(event) => setItem(event.target.value)}
                 onKeydownHandler={onKeydownHandler}
             />
             
-            <Button onClickHandler={onClickHandler} />
+            <Button onClickHandler={() => addItemList(item)} />
         </form>
     )
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Input = ({ item, onKeydownHandler, onChangeValue }) => {
+const Input = ({ value, onKeydownHandler, onChangeValueHandler }) => {
     return (
         <div>
             <label htmlFor="input">Digite aqui...</label>
             <input 
-                value={item} 
-                onChange={onChangeValue}
+                value={value} 
+                onChange={onChangeValueHandler}
                 onKeyDown={onKeydownHandler}
                 type="text" 
                 id="input" 
