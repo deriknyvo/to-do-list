@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Input from './components/Input/index';
+import List from './components/List/index';
 
 const App = () => {
   const [item, setItem] = React.useState('');
@@ -21,30 +23,14 @@ const App = () => {
   return (
     <div className="todo">
       <div> 
-        <label htmlFor="input">Digite aqui...</label>
-        <input 
-          value={item} 
-          onChange={onChangeValue}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter') {
-              addItem(item);
-            }
-          }}
-          type="text" 
-          id="input" 
+        <Input 
+          item={item}
+          addItem={addItem}
+          onChangeValue={onChangeValue}
         />
-        <button type="button" onClick={() => addItem(item)}>Salvar</button>
       </div>
 
-      <div>
-        <ul>
-          {list.map((item, index) => {
-            return (
-              <li key={index}>{item}</li>
-            )
-          })}
-        </ul>
-      </div>
+      <List list={list} />
     </div>
   );
 }
