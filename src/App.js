@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Input from './components/Input/index';
 import List from './components/List/index';
+import Form from './components/Form/index';
 
 const App = () => {
   const [item, setItem] = React.useState('');
   const [list, setList] = React.useState([]);
 
-  function addItem(item) {
+  function addItemList(item) {
     if (item.match(/\w/)) {
       item = item.trim();
       const newList = list.concat(item);
@@ -16,20 +16,9 @@ const App = () => {
     }
   }
 
-  function onChangeValue(event) {
-    setItem(event.target.value);
-  }
-
   return (
     <div className="todo">
-      <div> 
-        <Input 
-          item={item}
-          addItem={addItem}
-          onChangeValue={onChangeValue}
-        />
-      </div>
-
+      <Form item={item} addItemList={addItemList} setItem={setItem} />
       <List list={list} />
     </div>
   );
