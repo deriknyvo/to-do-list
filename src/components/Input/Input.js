@@ -1,9 +1,10 @@
 import React from 'react';
 
+import './Input.css';
+
 const Input = ({ value, onKeydownHandler, onChangeValueHandler }) => {
     return (
-        <div>
-            <label htmlFor="input">Digite aqui...</label>
+        <div id="input-container">
             <input 
                 value={value} 
                 onChange={onChangeValueHandler}
@@ -11,6 +12,7 @@ const Input = ({ value, onKeydownHandler, onChangeValueHandler }) => {
                 type="text" 
                 id="input" 
             />
+            <label htmlFor="input">Digite aqui...</label>
         </div>
     );
 }
